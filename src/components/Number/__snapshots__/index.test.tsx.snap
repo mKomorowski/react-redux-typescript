@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Number component renders correctly for '0' 1`] = `
+<div>
+  <span
+    class="number"
+  >
+    0
+  </span>
+</div>
+`;
+
+exports[`Number component renders correctly for negative number 1`] = `
+<div>
+  <span
+    class="number negative"
+  >
+    -1
+  </span>
+</div>
+`;
+
+exports[`Number component renders correctly for positive number 1`] = `
+<div>
+  <span
+    class="number positive"
+  >
+    1
+  </span>
+</div>
+`;
