@@ -1,37 +1,31 @@
 import React, { FC } from "react";
-import { connect } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 import { AppState } from "../..";
 import { increaseCount, decreaseCount } from "../../store/counter/actions";
 
 import Number from "../../components/Number";
 
-const mapState = (state: AppState) => ({
-  count: state.counter.count,
-});
+const Counter: FC = () => {
+  const count = useSelector((state: AppState) => state.counter.count);
+  const dispatch = useDispatch();
 
-const mapDispatch = {
-  increaseCount,
-  decreaseCount,
+  return (
+    <div className="counter">
+      <h1>Redux Counter</h1>
+      <h3>
+        Counter: <Number value={count} />
+      </h3>
+      <div>
+        <button type="button" onClick={() => dispatch(increaseCount())}>
+          Increase
+        </button>
+        <button type="button" onClick={() => dispatch(decreaseCount())}>
+          Decrease
+        </button>
+      </div>
+    </div>
+  );
 };
 
-type CounterProps = ReturnType<typeof mapState> & typeof mapDispatch;
-
-const Counter: FC<CounterProps> = ({ count, increaseCount, decreaseCount }) => (
-  <div className="counter">
-    <h1>Redux Counter</h1>
-    <h3>
-      Counter: <Number value={count} />
-    </h3>
-    <div>
-      <button type="button" onClick={() => increaseCount()}>
-        Increase
-      </button>
-      <button type="button" onClick={() => decreaseCount()}>
-        Decrease
-      </button>
-    </div>
-  </div>
-);
-
-export default connect(mapState, mapDispatch)(Counter);
+export default Counter;

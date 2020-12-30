@@ -7,6 +7,7 @@
     "react",
     "redux",
     "react router",
+    "react hooks",
     "react testing library",
     "webpack",
     "eslint",

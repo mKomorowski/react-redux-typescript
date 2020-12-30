@@ -9,6 +9,7 @@
 
 - [react](https://github.com/facebook/react)
 - [redux](https://github.com/reduxjs/redux)
+- [react-hooks](https://reactjs.org/docs/hooks-intro.html)
 - [react-router-dom](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom)
 - [typescript](https://github.com/microsoft/TypeScript)
 - [sass](https://github.com/sass/node-sass)
