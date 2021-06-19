@@ -12,11 +12,8 @@ export const decreaseCount = (): CounterActions => ({
   type: CounterActionTypes.DECREASE_COUNTER,
 });
 
-export const decreaseCountAsync = (): ThunkAction<
-  void,
-  AppState,
-  unknown,
-  Action<string>
-> => async (dispatch) => {
-  setTimeout(() => dispatch(decreaseCount()), 0);
-};
+export const decreaseCountAsync =
+  (): ThunkAction<void, AppState, unknown, Action<string>> =>
+  async (dispatch) => {
+    setTimeout(() => dispatch(decreaseCount()), 0);
+  };
