@@ -17,11 +17,7 @@ module.exports = {
       },
       {
         test: /\.tsx?$/,
-        use: [
-          "babel-loader",
-          "stylelint-custom-processor-loader",
-          "awesome-typescript-loader",
-        ],
+        use: ["babel-loader"],
       },
       {
         test: /\.css$/,
