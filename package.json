@@ -40,7 +40,11 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.1.0",
     "@types/classnames": "^2.3.1",
+<<<<<<< HEAD
     "@types/jest": "^27.0.1",
+=======
+    "@types/jest": "^26.0.23",
+>>>>>>> 69266b0 (Upgrade typescript version)
     "@types/node": "^16.9.2",
     "@types/react": "^17.0.11",
     "@types/react-dom": "^17.0.8",
@@ -82,11 +86,19 @@
     "stylelint-custom-processor-loader": "^0.6.0",
 =======
     "stylelint-config-standard": "^20.0.0",
+<<<<<<< HEAD
 >>>>>>> 1239642 (Remove stylelint loader)
     "stylelint-prettier": "^1.2.0",
     "ts-jest": "^27.0.5",
     "typescript": "^4.4.3",
     "uglifyjs-webpack-plugin": "^2.2.0",
+=======
+    "stylelint-custom-processor-loader": "^0.6.0",
+    "stylelint-prettier": "^1.2.0",
+    "ts-jest": "^27.0.5",
+    "typescript": "^4.4.3",
+    "uglifyjs-webpack-plugin": "^1.1.2",
+>>>>>>> 69266b0 (Upgrade typescript version)
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.12",
     "webpack-dev-middleware": "^3.7.2",
