@@ -76,7 +76,6 @@
     "stylelint": "^13.13.1",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-standard": "^20.0.0",
-    "stylelint-custom-processor-loader": "^0.6.0",
     "stylelint-prettier": "^1.2.0",
     "ts-jest": "^26.5.6",
     "typescript": "^3.9.10",
