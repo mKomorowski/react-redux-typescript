@@ -1,5 +1,5 @@
 // development config
-const merge = require("webpack-merge");
+const { merge } = require("webpack-merge");
 const webpack = require("webpack");
 const commonConfig = require("./common");
 
@@ -15,6 +15,6 @@ module.exports = merge(commonConfig, {
     hot: true,
     historyApiFallback: true,
   },
-  devtool: "cheap-module-eval-source-map",
+  devtool: "eval-cheap-module-source-map",
   plugins: [new webpack.HotModuleReplacementPlugin()],
 });
