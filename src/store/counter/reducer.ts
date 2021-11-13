@@ -1,28 +1,32 @@
-import { CounterActions, CounterActionTypes, CounterState } from "./types";
+import { createSlice } from "@reduxjs/toolkit";
+
+type CounterState = {
+  count: number;
+};
 
 const initialState: CounterState = {
   count: 0,
 };
 
-const reducer = (
-  // eslint-disable-next-line default-param-last
-  state = initialState,
-  action: CounterActions,
-): CounterState => {
-  switch (action.type) {
-    case CounterActionTypes.INCREASE_COUNTER:
-      return {
-        count: state.count + 1,
-      };
-    case CounterActionTypes.DECREASE_COUNTER:
-      return {
-        count: state.count - 1,
-      };
-    case CounterActionTypes.RESET_COUNTER:
-      return initialState;
-    default:
-      return state;
-  }
-};
+const counterSlice = createSlice({
+  name: "counter",
+  initialState,
+  reducers: {
+    increment: (state) => {
+      // eslint-disable-next-line no-param-reassign
+      state.count += 1;
+    },
+    decrement: (state) => {
+      // eslint-disable-next-line no-param-reassign
+      state.count -= 1;
+    },
+    reset: (state) => {
+      // eslint-disable-next-line no-param-reassign
+      state.count = initialState.count;
+    },
+  },
+});
 
-export default reducer;
+export const { increment, decrement, reset } = counterSlice.actions;
+
+export default counterSlice.reducer;

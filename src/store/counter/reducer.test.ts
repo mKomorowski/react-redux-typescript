@@ -1,39 +1,28 @@
-import reducer from "./reducer";
-import { CounterActionTypes } from "./types";
+import { AnyAction } from "@reduxjs/toolkit";
+
+import reducer, { decrement, increment, reset } from "./reducer";
 
 describe("Counter reducer", () => {
-  it("should handle INCREASE_COUNTER action", () => {
-    const result = reducer(undefined, {
-      type: CounterActionTypes.INCREASE_COUNTER,
-    });
-
-    expect(result).toEqual({ count: 1 });
-  });
-
-  it("should handle DECREASE_COUNTER action", () => {
-    const result = reducer(undefined, {
-      type: CounterActionTypes.DECREASE_COUNTER,
-    });
-
-    expect(result).toEqual({ count: -1 });
-  });
-
-  it("should handle RESET_COUNTER action", () => {
-    const result = reducer(
-      { count: 100 },
-      {
-        type: CounterActionTypes.RESET_COUNTER,
-      },
-    );
+  it("should return the initial state", () => {
+    const result = reducer(undefined, {} as AnyAction);
 
     expect(result).toEqual({ count: 0 });
   });
 
-  it("should handle unsupported action", () => {
-    const result = reducer(undefined, {
-      type: "unsupported",
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    } as any);
+  it("should handle increment action", () => {
+    const result = reducer(undefined, increment());
+
+    expect(result).toEqual({ count: 1 });
+  });
+
+  it("should handle decrement action", () => {
+    const result = reducer(undefined, decrement());
+
+    expect(result).toEqual({ count: -1 });
+  });
+
+  it("should handle reset action", () => {
+    const result = reducer({ count: 100 }, reset());
 
     expect(result).toEqual({ count: 0 });
   });
