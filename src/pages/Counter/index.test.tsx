@@ -1,23 +1,27 @@
 import React from "react";
 import { fireEvent, screen, render } from "@testing-library/react";
-import { applyMiddleware, createStore, compose } from "redux";
+import { applyMiddleware, configureStore, compose } from "@reduxjs/toolkit";
 import thunk from "redux-thunk";
 import { Provider } from "react-redux";
 
-import { AppState } from "../..";
+import { RootState } from "../..";
 import reducer from "../../store/reducer";
 import Counter from "./index";
 
 jest.useFakeTimers();
 
-const initialState: AppState = {
+const preloadedState: RootState = {
   counter: {
     count: 100,
   },
 };
 
 const middleware = compose(applyMiddleware(thunk));
-const store = createStore(reducer, initialState, middleware);
+const store = configureStore({
+  reducer,
+  preloadedState,
+  enhancers: [applyMiddleware(thunk)],
+});
 
 const wrapper = () => (
   <Provider store={store}>

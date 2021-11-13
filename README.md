@@ -10,7 +10,7 @@
 - [react](https://github.com/facebook/react)
 - [react-hooks](https://reactjs.org/docs/hooks-intro.html)
 - [react-router-dom](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom)
-- [redux](https://github.com/reduxjs/redux)
+- [redux-toolkit](https://github.com/reduxjs/redux-toolkit)
 - [redux-thunk](https://github.com/reduxjs/redux-thunk)
 - [redux-devtools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en)
 - [reselect](https://github.com/reduxjs/reselect)

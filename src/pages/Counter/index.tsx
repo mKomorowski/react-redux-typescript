@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import { increaseCount, decreaseCountAsync } from "../../store/counter/actions";
+import { decrement, increment } from "../../store/counter/reducer";
 import { counterValueSelector } from "../../store/counter/selectors";
 
 import Number from "../../components/Number";
@@ -17,10 +17,10 @@ const Counter: FC = () => {
         Counter: <Number value={count} />
       </h3>
       <div>
-        <button type="button" onClick={() => dispatch(increaseCount())}>
+        <button type="button" onClick={() => dispatch(increment())}>
           Increase
         </button>
-        <button type="button" onClick={() => dispatch(decreaseCountAsync())}>
+        <button type="button" onClick={() => dispatch(decrement())}>
           Decrease
         </button>
       </div>
