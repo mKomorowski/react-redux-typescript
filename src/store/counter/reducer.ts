@@ -5,6 +5,7 @@ const initialState: CounterState = {
 };
 
 const reducer = (
+  // eslint-disable-next-line default-param-last
   state = initialState,
   action: CounterActions,
 ): CounterState => {
